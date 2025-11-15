@@ -520,7 +520,7 @@ const SettingsPage: React.FC = () => {
                   <strong>版本:</strong> 1.0.0
                 </p>
                 <p>
-                  <strong>开发者:</strong> Memphis Accounting Team
+                  <strong>开发者:</strong> bobostudio
                 </p>
                 <p>
                   <strong>描述:</strong> 一个采用孟菲斯风格设计的个人记账应用
