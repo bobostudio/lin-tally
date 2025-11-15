@@ -12,6 +12,7 @@ const SyncStatusIndicator: React.FC = () => {
       bgColor: "bg-memphis-primary-700",
       text: "已连接",
       show: false, // idle 状态不显示
+      animate: false,
     },
     syncing: {
       icon: Loader2,
@@ -27,6 +28,7 @@ const SyncStatusIndicator: React.FC = () => {
       bgColor: "bg-green-500/10",
       text: "已同步",
       show: true,
+      animate: false,
     },
     error: {
       icon: CloudOff,
@@ -34,6 +36,7 @@ const SyncStatusIndicator: React.FC = () => {
       bgColor: "bg-red-500/10",
       text: "同步失败",
       show: true,
+      animate: false,
     },
   };
 

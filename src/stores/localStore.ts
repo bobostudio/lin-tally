@@ -134,6 +134,7 @@ const initialState = {
   searchFilter: {},
   isLoading: false,
   error: null,
+  syncStatus: "idle" as const,
 };
 
 // 创建状态存储
@@ -244,6 +245,10 @@ export const useLocalStore = create<AppState>()(
 
       clearError: () => {
         set({ error: null });
+      },
+
+      setSyncStatus: (status) => {
+        set({ syncStatus: status });
       },
 
       // 数据管理操作
