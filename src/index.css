@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 模态框定位修复 - 防止顶部和底部被遮挡 */
+@media (max-height: 600px) {
+  .fixed.inset-0.z-50 {
+    align-items: flex-start !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-height: 400px) {
+  .fixed.inset-0.z-50 {
+    align-items: flex-start !important;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .max-h-\[90vh\] {
+    max-height: 95vh !important;
+  }
+}
+
+/* 防止模态框内容溢出 */
+.overflow-y-auto {
+  scrollbar-width: thin;
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+/* 简洁黑白主题全局样式 */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body,
+  #root {
+    @apply h-full overflow-hidden;
+  }
+
+  body {
+    @apply bg-memphis-background-dark text-memphis-text-primary;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Inter", system-ui, sans-serif;
+    @apply text-memphis-text-primary font-medium;
+  }
+}
+
+/* 简洁黑白主题组件 */
+@layer components {
+  .memphis-gradient {
+    @apply bg-gradient-to-r from-memphis-primary-800 to-memphis-primary-900;
+  }
+
+  .memphis-pattern {
+    background-image: radial-gradient(
+        circle at 25px 25px,
+        rgba(255, 255, 255, 0.05) 2px,
+        transparent 0
+      ),
+      radial-gradient(
+        circle at 75px 75px,
+        rgba(255, 255, 255, 0.05) 2px,
+        transparent 0
+      );
+    background-size: 100px 100px;
+  }
+
+  .memphis-shadow-3d {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* 自定义滚动条 - 简洁黑白主题 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-memphis-primary-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-memphis-primary-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-memphis-primary-500;
+}
+
+/* 简洁动画效果 */
+@keyframes memphis-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-memphis-float {
+  animation: memphis-float 3s ease-in-out infinite;
+}
+
+/* 响应式字体 */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

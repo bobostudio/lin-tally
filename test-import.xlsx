@@ -1,0 +1,12 @@
+This is a test Excel file for import functionality. In a real scenario, this would be a proper Excel file with:
+
+Sheet 1: 记账记录
+日期 | 分类 | 金额 | 类型 | 备注
+2024-01-15 | 餐饮 | 25.50 | 支出 | 午餐
+2024-01-16 | 工资 | 5000 | 收入 | 月薪
+
+Sheet 2: 分类设置
+分类名称 | 图标 | 类型 | 颜色
+餐饮 | 🍽️ | 支出 | #ff6b6b
+工资 | 💰 | 收入 | #4ecdc4
+交通 | 🚗 | 支出 | #45b7d1
