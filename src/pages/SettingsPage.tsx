@@ -32,8 +32,8 @@ const SettingsPage: React.FC = () => {
   const [newCategoryIcon, setNewCategoryIcon] = useState("");
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   const [importPreview, setImportPreview] = useState<{
-    transactions: any[];
-    categories: any[];
+    transactions: unknown[];
+    categories: unknown[];
   } | null>(null);
   const [isImporting, setIsImporting] = useState(false);
 
@@ -107,7 +107,7 @@ const SettingsPage: React.FC = () => {
           categories: categoriesData,
         });
       } catch (error) {
-        alert("文件格式错误，请选择有效的Excel文件");
+        alert("文件格式错误，请选择有效的Excel文件" + error);
       }
     };
     reader.readAsArrayBuffer(file);
