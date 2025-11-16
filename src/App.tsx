@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import WelcomePage from "@/pages/WelcomePage";
 import HomePage from "@/pages/HomePage";
 import CalendarPage from "@/pages/CalendarPage";
 import StatisticsPage from "@/pages/StatisticsPage";
 import SearchPage from "@/pages/SearchPage";
 import SettingsPage from "@/pages/SettingsPage";
+import LoginPage from "@/pages/LoginPage";
+import RegisterPage from "@/pages/RegisterPage";
 import { initializeSupabaseStore, useLoading, useError } from "@/stores";
 
 const App: React.FC = () => {
@@ -61,7 +64,15 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        {/* 欢迎页 */}
+        <Route path="/" element={<WelcomePage />} />
+
+        {/* 认证路由 */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+
+        {/* 应用页面（需要登录后访问，暂时可直接访问用于测试） */}
+        <Route path="/app" element={<HomePage />} />
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/statistics" element={<StatisticsPage />} />
         <Route path="/search" element={<SearchPage />} />
